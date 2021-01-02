@@ -25,7 +25,7 @@ public class Director extends EmployeeDecorator{
 	}
 	
 	//Director assumes an employee
-	public void addEmployee(String name, String surname, LocalDate dateOfBirth, int employeeId, int workingHours, BigDecimal salary, String email){
+	public void addEmployee(String name, String surname, LocalDate dateOfBirth, int employeeId, int workingHours, BigDecimal salary, String email) throws ClassNotFoundException{
 		AccountQueryHandler.addAccountQuery(email, Utilities.generatePassword());
 		EmployeeQueryHandler.addEmployeeQuery(name, surname, dateOfBirth, LocalDate.now(), employeeId, workingHours, salary, email);
 	}

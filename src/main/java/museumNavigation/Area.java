@@ -6,12 +6,12 @@ public class Area{
 	private String areaName;
 	private String areaStyle;
 	private ArrayList<Artwork> artworks;
-	private String areaCuratorId;
+	private int areaCuratorId;
 	private boolean isAccessible  =true;
 	
 	protected Area() {}
 
-	public Area(String areaName, String areaStyle, String areaCuratorId){
+	public Area(String areaName, String areaStyle, int areaCuratorId){
 		this.areaName = areaName;
 		this.areaStyle = areaStyle;
 		this.areaCuratorId = areaCuratorId;
@@ -41,7 +41,7 @@ public class Area{
 		this.artworks = artworks;
 	}
 
-	public String getAreaCuratorId(){
+	public int getAreaCuratorId(){
 		return this.areaCuratorId;
 	}
 	

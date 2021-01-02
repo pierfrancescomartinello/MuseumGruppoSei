@@ -11,12 +11,9 @@ public class Visit {
 	private static ArrayList<Area> areas;
 
 	public Visit(){
-		areas.add(new Area("Barocco", null, null));
-		areas.add(new Area("Bruhrocco", null, null));
 	}
 
 	public static ArrayList<Area> returnAreas(){
-		areas.add(new Area("Barocco", null, null));
 		return areas;
 	}
 
@@ -25,8 +22,7 @@ public class Visit {
 	}
 
 	public Area selectArea() {
-		Area a = new Area(null, null, null);
-		return a;
+		return null;
 	}
 
 	public void exitArea() {

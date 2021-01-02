@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import it.GruppoSei.databaseHandler.queries.museumDatabase.AccountQueryHandler;
+import it.GruppoSei.databaseHandler.queries.museumSales.TicketQueryHandler;
 import it.GruppoSei.databaseHandler.queries.museumUsers.VisitorQueryHandler;
 
 import java.math.BigDecimal;
@@ -19,11 +20,8 @@ import museumSales.Sales;
 
 
 public class Visitor extends Person {	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String visitorId;
-	private Sales sales;
 	
+	private int visitorId;
 
 	//Da usare soltanto perche serve a JPA per il collegamento al DB
 	protected Visitor() {}
@@ -40,21 +38,19 @@ public class Visitor extends Person {
 		}
 	}
 
-	public boolean buyTicket(String type, LocalDate date, BigDecimal price) {
-		Ticket ticket = new Ticket(type, date, price, this.visitorId);
-		sales.addTicket(ticket);
-		
+	public boolean buyTicket(String ticketType, LocalDate visitDate, BigDecimal ticketPrice, int visitorId) {
+		TicketQueryHandler.addTicketQuery(ticketType, visitDate, true, ticketPrice, visitorId);
 		return true;
 	}
 
 	
 	public boolean deleteTicket(Ticket ticket) {
-		this.sales.getSoldTickets().remove(ticket);
 		return true;
 	}
 
-	public ArrayList<Ticket> showTickets() {
-		return this.sales.getSoldTickets();
+	public boolean showTickets() {
+		TicketQueryHandler.showTicketsQuery(this.getVisitorId());
+		return true;
 	}
 
 	public boolean buyGadget() {
@@ -65,12 +61,11 @@ public class Visitor extends Person {
 		return true;
 	}
 
-	public Visit startVisit(Ticket ticket) {
-		Visit v = null;
-		return v;
+	public boolean startVisit(int ticketId) {
+		return true;
 	}
 
-	public String getVisitorID() {
+	public int getVisitorId() {
 		return this.visitorId;
 	}
 
