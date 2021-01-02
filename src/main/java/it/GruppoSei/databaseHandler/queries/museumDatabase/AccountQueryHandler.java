@@ -15,8 +15,7 @@ public class AccountQueryHandler {
 	//Adds an account to the Database
 	public static boolean addAccountQuery(String email, String password) throws ClassNotFoundException {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/museum?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+			String url = "jdbc:mysql://localhost:3306/museum?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			Connection conn = DriverManager.getConnection(url, "root", "password");
 			Statement stmn = conn.createStatement();
 			int rs = stmn.executeUpdate(

@@ -18,8 +18,8 @@ public class Curator extends EmployeeDecorator{
 	}
 
 	public void addAreas(ArrayList<Area> areas){
-		for(Area area: areas){
-			if(area.getAreaCuratorId().equals(this.getEmployeeId())){
+		for(Area area: assignedAreas){
+			if(area.getAreaCuratorId() == this.getEmployeeId()){
 				this.assignedAreas.add(area);
 			}
 		}
