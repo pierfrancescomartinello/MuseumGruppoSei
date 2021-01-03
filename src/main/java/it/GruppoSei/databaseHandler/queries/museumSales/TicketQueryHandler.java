@@ -10,8 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-import museumUsers.Visitor;
-import museumUtil.Utilities;
+import it.GruppoSei.code.museumUsers.Visitor;
+import it.GruppoSei.code.museumUtil.Utilities;
 
 public class TicketQueryHandler {
 	

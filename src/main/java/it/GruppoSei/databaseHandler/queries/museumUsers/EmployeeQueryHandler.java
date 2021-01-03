@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import museumUsers.Employee;
+import it.GruppoSei.code.museumUsers.Employee;
 
 public class EmployeeQueryHandler {
 	

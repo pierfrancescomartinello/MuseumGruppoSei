@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import museumAccount.Account;
-import museumUtil.Utilities;
+import it.GruppoSei.code.museumAccount.Account;
+import it.GruppoSei.code.museumUtil.Utilities;
 
 public class AccountQueryHandler {
 

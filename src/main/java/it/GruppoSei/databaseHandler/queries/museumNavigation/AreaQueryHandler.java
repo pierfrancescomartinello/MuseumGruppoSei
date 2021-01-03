@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-import museumUtil.Utilities;
+import it.GruppoSei.code.museumUtil.Utilities;
 
 public class AreaQueryHandler {
 	public boolean addAreaQuery(String areaName, String areaStyle, int curatorId) {
